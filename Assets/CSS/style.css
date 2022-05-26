@@ -37,25 +37,31 @@ h2 {
 .questionPages, .finalPage {
     display: inline-block;
     font-size: 10px;
-    margin-left: 35em;
+    margin-left: 45em;
     margin-top: 10em;
 }
 
-/* .showResult {
-    display: flex;
-    justify-content:flex-start;
-    align-items: flex-start;
-    font-size: 30px;
-    margin: 10px;
-    margin-left: 350px;
-} */
-
 .showResult {
     font-size: 25px;
-    margin-left: 350px;
+    margin-left: 450px;
 }
 
 .btn-submit {
     background-color: #2a409a;
     color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    text-align: center;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 10px;
 }

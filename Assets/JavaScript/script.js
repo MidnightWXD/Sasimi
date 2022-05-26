@@ -25,9 +25,17 @@ var finalPage = document.querySelector(".finalPage");
 var highScorePage = document.querySelector(".highScorePage");
 var highScoreTitle = document.createElement("h1");
 highScoreTitle.textContent = "High Scores";
+var showHighScore = document.createElement("ul");
 var countRightAnswer = 0;
 var timeLeft = 10;
-
+var backToStartBtn = document.createElement("button");
+backToStartBtn.setAttribute("class", "btn btn-back");
+backToStartBtn.textContent = "Back to start";
+var clearHighScore = document.createElement("button");
+clearHighScore.setAttribute("class", "btn btn-clear");
+clearHighScore.textContent = "Clear High Score";
+var divContainer = document.createElement("div");
+divContainer.setAttribute("class", "btnContainer");
 
 
 var i = 0;
@@ -77,10 +85,7 @@ function setTime() {
 
 
 function questionStart() {
-    setTime();
-    // title.textContent = "";
-    // paragraph.textContent = "";
-    // startButton.style.display = "none";    
+    setTime();  
     startPage.style.display = "none";
     showQuestions();
 }
@@ -121,8 +126,7 @@ function showQuestions() {
                 showResult.appendChild(userAnswerCheck);
                 userAnswerCheck.textContent = "Wrong!";
                 showResult.style.display = "block";
-            }
-            console.log(i);
+            }            
             var time = 2;
             var timer = setInterval(function () {
                 time--;
@@ -163,10 +167,42 @@ function finalScorePage() {
         localStorage.setItem("highScores", JSON.stringify(highScores));
         finalPage.style.display = "none";
         highScorePage.appendChild(highScoreTitle);
-        
+        highScorePage.appendChild(showHighScore);       
+        highScores.forEach(function (score) {
+            var count = highScores.indexOf(score) + 1;
+            var li = document.createElement("li");
+            li.setAttribute("style", "list-style:none;");
+            li.textContent = count + ". " + score.initials + ": " + score.score;
+            showHighScore.appendChild(li);
+            setLiBackground();
+            highScorePage.appendChild(divContainer);
+            divContainer.appendChild(clearHighScore);
+            divContainer.appendChild(backToStartBtn);
+            //go back to start page
+            backToStartBtn.addEventListener("click", function () {
+                window.location.reload();
+            });
+            //clear high score but stay on the high score page
+            clearHighScore.addEventListener("click", function () {
+                localStorage.clear();
+                showHighScore.style.display = "none";
+            });
+        });
+        highScorePage.style.display = "block";        
     });
 }
-    
+//setLiBackground function set odd row background color to light gray, even row background color to white
+function setLiBackground() {
+    var li = document.querySelectorAll("li");
+    for (var i = 0; i < li.length; i++) {
+        if (i % 2 === 0) {
+            li[i].style.backgroundColor = "lightred";
+        } else {
+            li[i].style.backgroundColor = "lightblue";
+        }
+    }
+}
+
 
 startButton.addEventListener("click", questionStart);
 
