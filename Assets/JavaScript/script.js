@@ -39,31 +39,33 @@ divContainer.setAttribute("class", "btnContainer");
 
 
 var i = 0;
-//set up the questions
 var questions = [
     {
-        question: "In which continent are Chile, Argentina and Brazil?",
-        choices: ["North America", "South America", "Europe", "Australasia"],
-        correctAnswer: "South America"
+        question: "Inside which HTML element do we put the JavaScript?",
+        choices: ["<script>", "<js>", "<javascript>", "<scripting>"],
+        correctAnswer: "<script>"
     },
     {
-        question: "What is the capital of Brazil?",
-        choices: ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador"],
-        correctAnswer: "Brasilia"
+        question: "Where is the correct place to insert a JavaScript?",
+        choices: ["The <body> section", "The <head> section", "Both the <head> section and the <body> section", "None of the above"],
+        correctAnswer: "Both the <head> section and the <body> section"
     },
     {
-        question: "The Mad Hatter and the Cheshire Cat are characters in which famous book?",
-        choices: ["Alice in Wonderland", "The Cat in the Hat", "The Hatter and the Cheshire Cat", "The Cat in the Hat"],
-        correctAnswer: "The Hatter and the Cheshire Cat"
+        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        choices: ["<script name='xxx.js'>", "<script href='xxx.js'>", "<script src='xxx.js'>", "<script link='xxx.js'>"],
+        correctAnswer: "<script src='xxx.js'>"
     },
     {
-        question: "What is the name of the main character in the Harry Potter series?",
-        choices: ["Harry Potter", "Hermione Granger", "Ron Weasley", "Albus Dumbledore"],
-        correctAnswer: "Harry Potter"
+        question: "How do you write 'Hello World' in an alert box?",
+        choices: ["alertBox('Hello World');", "msgBox('Hello World');", "alert('Hello World');", "msg('Hello World');"],
+        correctAnswer: "alert('Hello World');"
+    },
+    {
+        question: "How do you create a function in JavaScript?",
+        choices: ["function myFunction()", "function:myFunction()", "function = myFunction()", "function myFunction()"],
+        correctAnswer: "function myFunction()"
     }
 ];
-
-
 
 
 // set up the timer
