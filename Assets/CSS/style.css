@@ -4,10 +4,11 @@ header {
     font-size: 10px;
 }
 
-.container {
+.startPage {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
     height: 100vh;
     padding: 50px;    
 }
@@ -26,16 +27,35 @@ header {
 }
 
 
-.startPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 h2 {
     display: flex;
     justify-content: top;
-    font-size: 30px;    
+    font-size: 20px;    
 }
 
+.questionPages, .finalPage {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 35em;
+    margin-top: 10em;
+}
+
+/* .showResult {
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    font-size: 30px;
+    margin: 10px;
+    margin-left: 350px;
+} */
+
+.showResult {
+    font-size: 25px;
+    margin-left: 350px;
+}
+
+.btn-submit {
+    background-color: #2a409a;
+    color: white;
+}
