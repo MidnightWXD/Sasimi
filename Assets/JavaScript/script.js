@@ -27,7 +27,6 @@ var highScoreTitle = document.createElement("h1");
 highScoreTitle.textContent = "High Scores";
 var showHighScore = document.createElement("ul");
 var countRightAnswer = 0;
-var timeLeft = 10;
 var backToStartBtn = document.createElement("button");
 backToStartBtn.setAttribute("class", "btn btn-back");
 backToStartBtn.textContent = "Back to start";
@@ -69,6 +68,7 @@ var questions = [
 
 
 // set up the timer
+var timeLeft = 40;
 function setTime() {    
     var timer = setInterval(function () {
         timeLeft--;
@@ -107,7 +107,6 @@ function showQuestions() {
         }
     }else {
         finalScorePage();
-        return;
     }
     var nextButton = document.querySelectorAll(".btn-question");
     nextButton.forEach(function (button) {
