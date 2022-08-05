@@ -20,4 +20,4 @@ setInterval is used to do time count down for the page.
 ![Code Quiz](./Assets/images/4.png)
 
 
-https://midnightwxd.github.io/Sasimi/
+https://midnightwxd.github.io/Sasimi-Code-Quiz/
